@@ -1,7 +1,11 @@
 {
   "metadata": {
-    "title": "Preparcial Template",
-    "description": "Base internationalization template with the Next.js App Router"
+    "title": "Breed List - PawsomeAdviceApp",
+    "description": "Discover all dog breeds accompanied by a random life advice: a collection designed to brighten your day."
+  },
+  "metadata_detail": {
+    "title": "Detail of <breedName> * -PawsomeAdviceApp",
+    "description": "Check a new photo of this breed along with a random life advice, and generate another combination whenever you want."
   },
   "header": {
     "appName": "My App",

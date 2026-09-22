@@ -1,7 +1,11 @@
 {
   "metadata": {
-    "title": "Plantilla Preparcial",
-    "description": "Plantilla base de internacionalización con Next.js App Router"
+    "title": "Listado de razas - PawsomeAdviceApp",
+    "description": "Descubre todas las razas de perro acompañadas de un consejo de vida aleatorio: una colección pensada para alegrar tu día"
+  },
+  "metadata_detail": {
+    "title": "Detalle de <breedName> * -PawsomeAdviceApp",
+    "description": "Consulta una nueva foto de esta raza junto conun consejo de vida aleatorio, y genera otra combinación cuando quieras"
   },
   "header": {
     "appName": "Mi App",

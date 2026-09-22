@@ -1,35 +1,36 @@
+// Página principal donde se listan los personajes de Rick and Morty a través de cardlist
 /**
- * Página principal de cada idioma (/es, /en). Demuestra la i18n completa:
- * carga del diccionario en servidor, props tipadas, .map() con key y grid responsive.
- * Server Component: lee el diccionario directamente, sin pasar por el cliente.
+ * HOME de cada idioma: /es y /en.
+ * Server Component (no tiene 'use client'), por eso puede ser `async` y leer
+ * el diccionario directamente en el servidor.
+ *
+ * Reparto de responsabilidades: esta página solo pone el título; la parte
+ * interactiva (buscador, filtro, grid) está en <CharacterList />, que sí es
+ * cliente. Ese es el patrón: servidor por fuera, cliente solo donde hace falta.
+ *
+ * NUEVA API: este archivo prácticamente no cambia.
  */
-import { getDictionary, hasLocale } from './dictionaries'
 import { notFound } from 'next/navigation'
-import Welcome from './components/Welcome'
-import Card from './components/Card'
-
+import { getDictionary, hasLocale } from './dictionaries'
+import { ItemList } from './components/ItemList'
 type Props = {
-  params: Promise<{ lang: string }>
+  params: Promise<{ lang: string }> // Next 16: params es una promesa
 }
 
 export default async function Page({ params }: Props) {
-  // `params` es una promesa en el App Router: se espera antes de usar `lang`.
   const { lang } = await params
+
+  // `hasLocale` es un type guard: además de validar, convierte `lang`
+  // de `string` a `Locale`, que es lo que espera getDictionary.
   if (!hasLocale(lang)) notFound()
 
-  const dict = await getDictionary(lang)
+  const dictionary = await getDictionary(lang)
 
   return (
-    <main className="flex flex-col gap-8 p-8">
-      <Welcome t={dict.home} />
-
-      {/* Grid responsive: 1 columna en móvil, 2 en tablet, 3 en escritorio. */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {dict.cards.map((card) => (
-          // `key` estable: el título es único dentro del diccionario.
-          <Card key={card.title} title={card.title} description={card.description} />
-        ))}
-      </div>
+    <main className="grid grid-cols-1 gap-4">
+      <h1 className="mb-4 text-2xl font-bold">{dictionary.home.welcome}</h1>
+      {/* ItemList no recibe props: saca los datos del contexto. */}
+      <ItemList />
     </main>
   )
 }

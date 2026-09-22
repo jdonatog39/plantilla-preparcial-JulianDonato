@@ -8,7 +8,7 @@
 
 import { use } from 'react'
 import ItemForm from '../../../components/ItemForm'
-import { useItems } from '../../../context/ItemsContext'
+import { useItems } from '../../../context/mascotaContext'
 import { useDictionary } from '../../../context/DictionaryContext'
 
 type Props = { params: Promise<{ lang: string; id: string }> }

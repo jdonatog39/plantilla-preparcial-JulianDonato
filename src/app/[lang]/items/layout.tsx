@@ -5,7 +5,7 @@
  * Server Component: aquí es donde se traen los datos iniciales.
  */
 import { getItems } from '../../lib/items'
-import { ItemsProvider } from '../context/ItemsContext'
+import { ItemsProvider } from '../context/mascotaContext'
 
 export default async function ItemsLayout({ children }: { children: React.ReactNode }) {
   const initialItems = await getItems()

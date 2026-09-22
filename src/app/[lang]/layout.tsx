@@ -43,7 +43,9 @@ export default async function RootLayout({ children, params }: Props) {
       <body>
         <DictionaryProvider dictionary={dict} locale={lang}>
           <Header lang={lang} t={dict.header} />
-          {children}
+          <main style={{ backgroundColor: '#F5F5F0' }}>
+            {children}
+          </main>
         </DictionaryProvider>
       </body>
     </html>

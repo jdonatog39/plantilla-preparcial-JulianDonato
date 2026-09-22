@@ -5,11 +5,11 @@ const nextConfig: NextConfig = {
     // Dominios externos permitidos para <Image />. Vacío por ahora:
     // si el parcial pide imágenes remotas, se descomenta y se ajusta el hostname.
     remotePatterns: [
-      // {
-      //   protocol: 'https',
-      //   hostname: 'ejemplo.com',
-      //   pathname: '/ruta/**',
-      // },
+      {
+      protocol: 'https',
+      hostname: 'dog.ceo',
+      pathname: '/api/breed/<breed>/images/random',
+      },
     ],
   },
 };
