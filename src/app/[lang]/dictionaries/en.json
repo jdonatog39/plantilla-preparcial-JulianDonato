@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "title": "Preparcial Template",
+    "description": "Base internationalization template with the Next.js App Router"
+  },
+  "header": {
+    "appName": "My App",
+    "languageLabel": "Language",
+    "languages": { "es": "Spanish", "en": "English" },
+    "home": "Home",
+    "items": "Items"
+  },
+  "home": {
+    "welcome": "Welcome",
+    "profile": "Profile",
+    "description": "This page changes language based on your preference."
+  },
+  "cards": [
+    {
+      "title": "Language-based routing",
+      "description": "Every route lives under /[lang], so the URL always tells you which language you are in."
+    },
+    {
+      "title": "Automatic detection",
+      "description": "The proxy reads your cookie and your browser preferences to send you to the right language."
+    },
+    {
+      "title": "Async dictionaries",
+      "description": "Text is loaded on the server from JSON files, with no hardcoded strings in the components."
+    }
+  ],
+  "items": {
+    "title": "Items",
+    "new": "New item",
+    "loading": "Loading...",
+    "empty": "There are no items yet. Create the first one.",
+    "noResults": "No items match your search.",
+    "notFound": "Item not found.",
+    "searchPlaceholder": "Search by name...",
+    "allStatuses": "All statuses",
+    "viewDetails": "View details",
+    "back": "Back",
+    "createTitle": "Create item",
+    "editTitle": "Edit item",
+    "create": "Create",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirmDelete": "Are you sure you want to delete it?",
+    "confirm": "Yes, delete",
+    "cancel": "Cancel",
+    "select": "Select an option",
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "archived": "Archived"
+    },
+    "category": {
+      "general": "General",
+      "featured": "Featured",
+      "other": "Other"
+    },
+    "fields": {
+      "name": "Name",
+      "description": "Description",
+      "status": "Status",
+      "category": "Category",
+      "quantity": "Quantity",
+      "imageUrl": "Image (URL)"
+    },
+    "errors": {
+      "nameMin": "Name must be at least 2 characters long.",
+      "description": "Description is required.",
+      "status": "Status is required.",
+      "category": "Category is required.",
+      "quantity": "Quantity must be a whole number between 0 and 100."
+    }
+  }
+}
